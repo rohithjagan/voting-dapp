@@ -1,7 +1,7 @@
 # Security Policy
 
 ## Reporting a Vulnerability
-If you discover a security vulnerability within this project, **please do NOT open a public issue**. Instead, send an email to [your.email@example.com] with a detailed description. We appreciate responsible disclosure and will respond within 48 hours.
+If you discover a security vulnerability within this project, **please do NOT open a public issue**. Instead, send an email to [rohithjagan25@gmail.com] with a detailed description. We appreciate responsible disclosure and will respond within 48 hours.
 
 ## Supported Versions
 Only the latest commit on `main` branch is supported with security updates.
