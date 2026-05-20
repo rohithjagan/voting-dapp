@@ -1,70 +1,196 @@
-# Getting Started with Create React App
+# 🗳️ Blockchain-Based Voting System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A tamper-proof, transparent, and secure voting dApp built on Polygon Amoy testnet. One person, one vote — enforced by an immutable smart contract. Real-time results, admin dashboard, and MetaMask integration.
 
-## Available Scripts
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Solidity](https://img.shields.io/badge/solidity-%5E0.8.28-lightgrey)
+![React](https://img.shields.io/badge/react-19.2.6-61DAFB)
 
-In the project directory, you can run:
+## ✨ Features
 
-### `npm start`
+- **Secure vote casting** – each address can vote only once
+- **Tamper-proof records** – votes are stored on-chain, immutable
+- **Admin dashboard** – add candidates directly from the UI
+- **Real-time results** – auto-updates via blockchain events
+- **MetaMask wallet** – one-click login and transaction signing
+- **Modern dark UI** – premium, production-grade interface
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠 Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+| Layer        | Technology                      |
+| ------------ | ------------------------------- |
+| Smart Contract | Solidity (^0.8.28)              |
+| Blockchain   | Polygon Amoy Testnet           |
+| Development  | Hardhat 3, ethers.js v6        |
+| Frontend     | React 19, Create React App     |
+| Wallet       | MetaMask                       |
 
-### `npm test`
+## 📦 Project Structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# voting-dapp
 
-### `npm run build`
+```text
+voting-dapp/
+├── contracts/                 # Solidity contracts
+│   └── Voting.sol
+├── scripts/                   # Deployment & utility scripts
+│   ├── deploy.js
+│   ├── addCandidates.js
+│   └── testVoting.js
+├── src/                       # React frontend
+│   ├── App.js
+│   ├── contract.js            # Contract address
+│   └── VotingABI.js           # Contract ABI
+├── test/                      # (optional) JS tests
+├── artifacts/                 # Hardhat compilation output
+├── hardhat.config.ts          # Hardhat configuration
+├── .env.example               # Environment variables template
+└── README.md
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚀 Quick Start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
 
-### `npm run eject`
+- Node.js ≥ 22.13.0
+- MetaMask browser extension
+- Git
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📦 Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 1. Clone the repository
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+git clone https://github.com/your-username/voting-dapp.git
+cd voting-dapp
+```
 
-## Learn More
+### 2. Install dependencies
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm install --legacy-peer-deps
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 3. Set up environment variables
 
-### Code Splitting
+```bash
+cp .env.example .env
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Edit `.env` and add your MetaMask wallet private key.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## ⚙️ Running the Project
 
-### Making a Progressive Web App
+### Start the Hardhat local node (optional)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+npx hardhat node
+```
 
-### Advanced Configuration
+### Compile smart contracts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+npx hardhat build
+```
 
-### Deployment
+### Deploy to Polygon Amoy Testnet
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+node scripts/deploy.js
+```
 
-### `npm run build` fails to minify
+Ensure your wallet has test POL from the Polygon faucet.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Add candidates (admin only)
+
+```bash
+node scripts/addCandidates.js
+```
+
+### Start the React frontend
+
+```bash
+npm start
+```
+
+Open:
+
+```text
+http://localhost:3000
+```
+
+Then connect MetaMask.
+
+---
+
+## 🧪 Testing
+
+### Local testing with Hardhat node
+
+Terminal 1:
+
+```bash
+npx hardhat node
+```
+
+Terminal 2:
+
+```bash
+node scripts/testVoting.js
+```
+
+---
+
+## 📄 Smart Contract
+
+`Voting.sol` implements:
+
+- `addCandidate(string name)` → Admin only
+- `vote(uint candidateId)` → One vote per address
+- `getCandidates()` → Returns all candidate data
+
+### Events
+
+- `Voted`
+- `CandidateAdded`
+
+### Deployed Contract Address (Amoy Testnet)
+
+```text
+0x56675FB45d67F818f36B42f74dDaA3B969D04726
+```
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+See `CONTRIBUTING.md`.
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+See `LICENSE`.
+
+---
+
+## 🔒 Security
+
+Please review `SECURITY.md` for responsible disclosure guidelines.
+
+---
+
+## 📬 Contact
+
+- Maintainer: Your Name
+- Twitter: @your_handle
