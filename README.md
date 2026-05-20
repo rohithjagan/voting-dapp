@@ -192,5 +192,5 @@ Please review `SECURITY.md` for responsible disclosure guidelines.
 
 ## 📬 Contact
 
-- Maintainer: Your Name
-- Twitter: @your_handle
+- Maintainer: Rohith Jagan
+- Instagram: @rohithjagan2006
